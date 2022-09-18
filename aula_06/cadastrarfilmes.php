@@ -1,13 +1,13 @@
-<h1 style="text-align: center;">Tela de contato!</h1>
+<h1 style="text-align: center;">Cadastrar Filmes</h1>
 
 <?php
     if (isset($_POST['gravar'])) {
-        $insertSQL = "INSERT INTO contato (nome, email, telefone) VALUES (:nome, :email, :telefone)";
+        $insertSQL = "INSERT INTO filmes (nome, resumo, ano) VALUES (:nome, :resumo, :ano)";
         $insertSQLprepara = $conn->prepare($insertSQL);
-        if ($insertSQLprepara->execute(array("nome" => $_POST['nome'], "email" => $_POST['email'], "telefone" => $_POST['telefone']))) {
+        if ($insertSQLprepara->execute(array("nome" => $_POST['nome'], "resumo" => $_POST['resumo'], "ano" => $_POST['ano']))) {
             echo 
                 "<br><div class=\"alert alert-success\" role=\"alert\">
-                    Contato cadastrado com sucesso!
+                    Filme cadastrado com sucesso!
                 </div>";
         }
     } else {
@@ -20,15 +20,15 @@
             <input type="text" class="form-control" name="nome" id="floatingInput" placeholder="Ciclano Beltrão">
             <label for="floatingInput">Nome</label>
         </div>
-        <!-- email -->
+        <!-- Resumo -->
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email</label>
+            <textarea class="form-control" name="resumo" placeholder="Digite o resumo do filme" id="floatingTextarea" style="height: 30vh"></textarea>
+            <label for="floatingTextarea">Resumo</label>
         </div>
-        <!-- telefone -->
+        <!-- Ano -->
         <div class="form-floating mb-3">
-            <input type="tel" class="form-control" name="telefone" id="floatingInput" placeholder="(99)9 9999-9999">
-            <label for="floatingInput">Telefone</label>
+            <input type="tel" class="form-control" name="ano" id="floatingInput" placeholder="(99)9 9999-9999">
+            <label for="floatingInput">Ano de Lancamento</label>
         </div>
         <!-- botão -->
         <div class="d-grid gap-2">

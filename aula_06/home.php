@@ -1,1 +1,1 @@
-<h1>DevTi 2022</h1>
+<h1 style="text-align: center;">Tela Inicial do Sistema!</h1>

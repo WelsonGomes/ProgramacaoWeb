@@ -1,0 +1,11 @@
+html {
+     background-color: #000; 
+     overflow: hidden;
+} 
+
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: #ebecee; 
+    border: 2px dashed red;
+}
