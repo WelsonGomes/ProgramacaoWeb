@@ -8,106 +8,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriz</title>
+    <script src="https://kit.fontawesome.com/1ebb8d9a9c.js" crossorigin="anonymous"></script>
+    <title>Meu E-Commerce</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
     <style>
-        .desc {
-            text-decoration: none;
-            color: black;
-        }
-        .desc:hover{
-            color: blue;
-            text-decoration: underline;
+        body {
+            margin: 0;
+            padding: 0;
         }
     </style>
-
 </head>
 <body>
-    <div class="container">
-        <div class="row" style="background-color: red; height: 100px;">
-            TOPO
-        </div>
-        <div class="row">
-            menu horizontal
-        </div>
-        <div class="row">
-            <div class="col-2">
-                <?php
-                    $sql = "SELECT * FROM meu_commerce.categorias WHERE categoria_pai is null";
-                    $consulta = $conn->prepare($sql);
-                    $consulta->execute();
-
-                    foreach($consulta as $linha){
-                ?>
-                    <a href="?categoria=<?php echo $linha['id'];?>">
-                        <div class="item-menu"><?php echo $linha['descricao'];?></div>
-                    </a>
-                    <?php
-                        //listar as sub-categorias
-                        $sql_itens = "SELECT * FROM meu_commerce.categorias WHERE categoria_pai = ".$linha['id'];
-                        $subitens = $conn->prepare($sql_itens);
-                        $subitens->execute();
-                        foreach($subitens as $item){
-                    ?>
-                    - <a href="?categoria=<?php echo $item['id'];?>"><?php echo $item['descricao'];?></a><br>
-                    <?php
-                        }
-                    }
-                ?>
-            </div>
-
-            <div class="col-10">
-                <?php
-                    if(isset($_GET['categoria'])){
-                        $sql = "SELECT p.id as id_produto, 
-                                       p.categoria_id, 
-                                       p.imagem, 
-                                       p.descricao, 
-                                       p.resumo, 
-                                       c.categoria_pai, 
-                                       c.id as id_categoria
-                                  FROM produtos p
-                            INNER JOIN categorias c
-                                    ON p.categoria_id = c.categoria_pai OR p.categoria_id = c.id
-                                 WHERE p.categoria_id = {$_GET['categoria']} OR c.categoria_pai = {$_GET['categoria']}
-                              ORDER BY RAND()";
-                    }
-                    else {
-                        $sql = "SELECT p.id as id_produto, 
-                                       p.categoria_id, 
-                                       p.imagem, 
-                                       p.descricao, 
-                                       p.resumo 
-                                  FROM produtos p 
-                              ORDER BY RAND()";
-                    }
-                    $consulta = $conn->prepare($sql);
-                    $consulta->execute();
-                   
-                    foreach($consulta as $linha){?>
-
-                    <div class="card" style="width: 18rem; display: inline-block; margin: 10px;">
-                        <img style="width: 18rem;" src="<?php echo $linha['imagem'];?>" alt="...">
-                        <div class="card-body">
-                            <a class="desc" href="descricao.php"><h5 class="card-title"><?php echo $linha['descricao'];?></h5></a>
-                            <p class="card-text"><?php echo $linha['resumo']?></p>
-
-                        </div>
+    <?php
+        include "menu.php";
+    ?> 
+    <main>
+        <div class="container-fluid">
+            <div id="mainSlider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#mainSlider" data-slide-to="1"></li>
+                    <li data-target="#mainSlider" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="slides/01.png" class="d-block w-100" alt="slides do e-commerce">   
                     </div>
-                    <?php
-                    }
-                ?>
+                    <div class="carousel-item">
+                        <img src="slides/02.png" class="d-block w-100" alt="slides do e-commerce">   
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slides/03.png" class="d-block w-100" alt="slides do e-commerce">   
+                    </div>
+                    <a href="#mainSlider" class="carousel-control-prev" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a href="#mainSlider" class="carousel-control-next" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="row" style="background-color: blue;">
-            Rodapé
-        </div>
-    </div>  
+        </div> 
+    </main>
     
     
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
 </body>
 </html>
