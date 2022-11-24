@@ -49,7 +49,9 @@
                             <img src="<?php echo $linha['imagem'];?>" class="card-img-top" alt="">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $linha['descricao'];?></h5>
+                            <h5 class="card-title">
+                                <a href=""><?php echo $linha['descricao'];?></a>
+                            </h5>
                             <p class="card-text"><?php echo $linha['resumo']?></p>
                             <h5 class="card-text">R$ <?php echo number_format($valor,2,',','.');?></h5>
                         </div>
@@ -59,4 +61,4 @@
             }?>
     </div>
 </body>
-</html>
+</html> 
