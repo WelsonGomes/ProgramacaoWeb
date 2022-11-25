@@ -50,7 +50,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a name="produto" href="descricao.php"><?php echo $linha['descricao'];?></a>
+                                <a name="produto" href="descricao.php?descricao=<?php echo $linha['descricao'];?>"><?php echo $linha['descricao'];?></a>
                             </h5>
                             <p class="card-text"><?php echo $linha['resumo']?></p>
                             <h5 class="card-text">R$ <?php echo number_format($valor,2,',','.');?></h5>
