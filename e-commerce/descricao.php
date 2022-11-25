@@ -22,8 +22,19 @@
     <?php
         include "menu.php";
     ?>  
-    
-    
+    <!-- INCUINDO O PRODUTO ESCOLHIDO -->
+    <div class="container-fluid" style="background-color: blue;">
+        <div class="container" style="background-color: red;">
+            <div class="row" style="background-color: blue;">
+                <div class="icone">
+                    <img src="" alt="...">
+                </div>
+                <div class="desc">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- INCLUINDO PRODUTOS -->
