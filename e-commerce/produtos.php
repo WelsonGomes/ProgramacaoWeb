@@ -7,6 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="_css/produtos.css">
     <title>Document</title>
+    <style>
+        div.titulo {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+        a {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem small;
+        }
+        div.preco {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        h5 {
+            display: flex;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container m-auto p-0 produto">
@@ -49,11 +73,15 @@
                             <img src="<?php echo $linha['imagem'];?>" class="card-img-top" alt="">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <div class="titulo">
                                 <a name="produto" href="descricao.php?descricao=<?php echo $linha['descricao'];?>"><?php echo $linha['descricao'];?></a>
-                            </h5>
-                            <p class="card-text"><?php echo $linha['resumo']?></p>
-                            <h5 class="card-text">R$ <?php echo number_format($valor,2,',','.');?></h5>
+                            </div>
+                            <div class="titulo">    
+                                <p class="card-text"><?php echo $linha['resumo']?></p>
+                            </div>
+                            <div class="preco">
+                                <h5 class="card-text">R$ <?php echo number_format($valor,2,',','.');?></h5>
+                            </div>
                         </div>
                     </section>
                 </main>
