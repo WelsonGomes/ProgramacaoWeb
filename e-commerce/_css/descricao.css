@@ -1,0 +1,38 @@
+div.corpo-fluid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.container {
+    margin: auto;
+}
+
+div.linha {
+    margin: 20px 0px 20px 0px;
+    box-shadow: 0px 2px 5px #00000091;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+div.icone {
+    display: flex;
+    width: 700px;
+    height: 700px;
+    align-items: center;
+}
+
+div.icone img {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+div.desc {
+    display: inline-block;
+    width: 530px;
+    height: 700px;
+    margin: 20px;
+    box-shadow: 0px 2px 5px #00000091;
+    border-radius: 10px;
+}
