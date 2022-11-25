@@ -14,7 +14,7 @@
             display: flex;
             align-items: center;
         }
-        a {
+        a.nome {
             display: block;
             text-align: center;
             font-weight: 700;
@@ -74,7 +74,7 @@
                         </div>
                         <div class="card-body">
                             <div class="titulo">
-                                <a name="produto" href="descricao.php?descricao=<?php echo $linha['descricao'];?>"><?php echo $linha['descricao'];?></a>
+                                <a class="nome" name="produto" href="descricao.php?descricao=<?php echo $linha['descricao'];?>"><?php echo $linha['descricao'];?></a>
                             </div>
                             <div class="titulo">    
                                 <p class="card-text"><?php echo $linha['resumo']?></p>
