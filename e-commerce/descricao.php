@@ -1,12 +1,12 @@
 <?php
     include "_lib/bdconn.php";
 
-    // if (isset($_GET['descricao'])){
-    //     $Sql = "SELECT id, descricao, caracteristicas, categoria_id, valor, estoque, imagem, resumo FROM produtos WHERE descricao = '{$_GET['descricao']}'";
-    //     $consulta = $conn->prepare($Sql);
-    //     $consulta->execute();
-    // }
-
+    if (isset($_GET['id'])){
+        $Sql = "SELECT id, descricao, caracteristicas, categoria_id, valor, estoque, imagem, resumo FROM produtos WHERE id = {$_GET['id']}";
+        $consulta = $conn->prepare($Sql);
+        $consulta->execute();
+    }
+    echo $Sql;
 ?>
 
 <!DOCTYPE html>

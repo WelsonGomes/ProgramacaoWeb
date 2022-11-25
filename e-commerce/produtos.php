@@ -19,6 +19,7 @@
             text-align: center;
             font-weight: 700;
             font-size: 1.1rem small;
+            margin: auto;
         }
         div.preco {
             width: 100%;
@@ -29,6 +30,10 @@
         h5 {
             display: flex;
             margin: auto;
+        }
+        p.descri {
+            display: flex;
+            margin: auto;    
         }
     </style>
 </head>
@@ -74,14 +79,16 @@
                         </div>
                         <div class="card-body">
                             <div class="titulo">
-                                <a class="nome" name="produto" href="descricao.php?descricao=<?php echo $linha['descricao'];?>"><?php echo $linha['descricao'];?></a>
+                                <!-- <p class="id" style="display: none;"><?php echo $linha['id_produto'];?></p> -->
+                                <a class="nome" name="produto" href="descricao.php?id=<?php echo $linha['id_produto'];?>"><?php echo $linha['descricao'];?></a>
                             </div>
                             <div class="titulo">    
-                                <p class="card-text"><?php echo $linha['resumo']?></p>
+                                <p class="descri" class="card-text"><?php echo $linha['resumo']?></p>
                             </div>
                             <div class="preco">
                                 <h5 class="card-text">R$ <?php echo number_format($valor,2,',','.');?></h5>
                             </div>
+
                         </div>
                     </section>
                 </main>
