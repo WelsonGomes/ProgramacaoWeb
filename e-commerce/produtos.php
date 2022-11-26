@@ -79,7 +79,6 @@
                         </div>
                         <div class="card-body">
                             <div class="titulo">
-                                <!-- <p class="id" style="display: none;"><?php echo $linha['id_produto'];?></p> -->
                                 <a class="nome" name="produto" href="descricao.php?id=<?php echo $linha['id_produto'];?>"><?php echo $linha['descricao'];?></a>
                             </div>
                             <div class="titulo">    

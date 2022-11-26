@@ -1,12 +1,5 @@
 <?php
-    include "_lib/bdconn.php";
-
-    if (isset($_GET['id'])){
-        $Sql = "SELECT id, descricao, caracteristicas, categoria_id, valor, estoque, imagem, resumo FROM produtos WHERE id = {$_GET['id']}";
-        $consulta = $conn->prepare($Sql);
-        $consulta->execute();
-    }
-    echo $Sql;
+    include "_lib/bdconn.php"
 ?>
 
 <!DOCTYPE html>
@@ -30,16 +23,35 @@
         <div class="container">
             <div class="row linha">
                 <div class="icone">
-                    <img src="_produtos/tvnova.png" alt="...">
+                    <?php
+                        if (isset($_GET['id'])){
+                            $Sql = "SELECT id, 
+                                        descricao, 
+                                        caracteristicas, 
+                                        categoria_id, 
+                                        valor, 
+                                        estoque, 
+                                        imagem, 
+                                        resumo 
+                                    FROM produtos 
+                                    WHERE id = {$_GET['id']}";
+                                    
+                            $consulta = $conn->prepare($Sql);
+                            $consulta->execute();
+                            $linha = $consulta->fetch();
+                            $valor = $linha['valor'];
+                        };
+                    ?>
+                    <img src="<?php echo $linha['imagem'];?>" alt="...">
                 </div>
                 <div class="desc">
-                    <h4>SmartTv SangSuga 722 polegadas 18k 7D</h4>
+                    <h4><?php echo $linha['descricao'];?></h4>
                     <br><br>
-                    <h2>R$ 59.374,22</h2>
-                    <h5>em 322x de R$ 500,00</h5>
+                    <h2>R$ <?php echo number_format($valor,2,',','.');?></h2>
+                    <h5>em 10x de R$ <?php echo number_format($valor/10,2,',','.');?></h5>
                     <p>Veja os meios de pagamento</p>
                     <br>
-                    <p>oferta do dia</p>
+                    <p><?php echo $linha['resumo']?></p>
                     <br>
                     <p>Calcular frete</p>
                     <p>Ver formas de entrega</p>
