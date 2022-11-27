@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="_css/menu.css">
     <title>Menu</title>
+    <style>
+        
+    </style>
 </head>
 <body>
 <div class="container-fluid" style="background-color: #5368A6;">
@@ -27,7 +30,7 @@
                 <div class="row m-auto mt-2 col-12">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-inline-block">
                         <li class="nav-item dropdown d-inline-block col-3 m-0">
-                            <a class="nav-link dropdown-toggle d-inline-block" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle d-inline-block meumenu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorias
                             </a>
                             <?php
@@ -42,7 +45,7 @@
                                 foreach($consulta as $linha){?>
                                 
                                     <li>
-                                        <a href="?categoria=<?php echo $linha['id'];?>">
+                                        <a class="meumenu" href="?categoria=<?php echo $linha['id'];?>">
                                             <div class="item-menu" style="padding: 0px 10px 0px 10px;"><?php echo $linha['descricao'];?></div>
                                         </a>
                                         <!-- <a class="dropdown-item" href="?categoria=</a> -->
@@ -55,15 +58,15 @@
                         </li>
 
                         <li class="nav-item d-inline-block col-3 m-0">
-                            <a class="nav-link active d-inline-block" aria-current="page" href="index.php">Principal</a>
+                            <a class="nav-link active d-inline-block meumenu" aria-current="page" href="index.php">Principal</a>
                         </li>
 
                         <li class="nav-item d-inline-block col-3 m-0">
-                            <a class="nav-link d-inline-block" href="#">Ofertas</a>
+                            <a class="nav-link d-inline-block meumenu" href="#">Ofertas</a>
                         </li>
 
                         <li class="nav-item d-inline-block col-2 m-0">
-                            <a class="nav-link d-inline-block" href="#">Contato</a>
+                            <a class="nav-link d-inline-block meumenu" href="#">Contato</a>
                         </li>
                     </ul>
                 </div>

@@ -14,12 +14,13 @@
             display: flex;
             align-items: center;
         }
-        a.nome {
+        .nome {
             display: block;
             text-align: center;
             font-weight: 700;
             font-size: 1.1rem small;
             margin: auto;
+            color: black;
         }
         div.preco {
             width: 100%;
@@ -34,6 +35,9 @@
         p.descri {
             display: flex;
             margin: auto;    
+        }
+        .nome:hover {
+            color: blue;
         }
     </style>
 </head>
