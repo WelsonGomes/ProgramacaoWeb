@@ -1,14 +1,6 @@
 <?php
     include "_lib/bdconn.php";
-
-    if (isset($_POST['email']) || isset($_POST['senha'])){
-        if (strlen($_POST['email']) > 0 and strlen($_POST['senha']) > 0) {
-            header('Location: index.php');
-        } else {
-            echo "Erro";
-        }
-    }
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="pt-br">
