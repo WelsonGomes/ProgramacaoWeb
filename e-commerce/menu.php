@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if ($_SESSION['usuario']) {
+        $logado = $_SESSION['usuario'];
+    } else {
+        $logado = '';
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -72,9 +80,9 @@
             <div class="col-3" style="background-color: #5368A6; height: 100px;">
                 <div class="row col-11 m-auto mt-2 local">
                     <i class="fa-solid fa-tag col-1 m-0 p-0 pt-1"></i>
-                    <p class="col-9 m-0 p-0" style="font-size: 1em; text-align: center;">Ofertas por tempo limitado</p>
+                    <p class="col-9 m-0 p-0" style="font-size: 1em; text-align: center;"><?php if ($logado <> '') { echo $_SESSION['usuario']; }?></p>
                 </div>
-                <a href="login.php">
+                <a href="loginnovo.php">
                     <div class="row col-3 m-auto mt-2 local">
                         <i class="fa-solid fa-right-to-bracket col-3 m-0 p-0 pt-1"></i>
                         <p class="col-9 m-0 p-0">Entrar</p>
