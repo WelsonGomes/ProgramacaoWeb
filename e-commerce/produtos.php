@@ -21,6 +21,7 @@
             font-size: 1.1rem small;
             margin: auto;
             color: black;
+            text-decoration: none;
         }
         div.preco {
             width: 100%;

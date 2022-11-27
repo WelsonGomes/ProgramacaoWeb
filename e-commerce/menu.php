@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="_css/menu.css">
     <title>Menu</title>
-    <style>
-        
-    </style>
 </head>
 <body>
 <div class="container-fluid" style="background-color: #5368A6;">

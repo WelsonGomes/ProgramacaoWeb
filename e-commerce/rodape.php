@@ -36,6 +36,10 @@
         text-align: center;
         margin-top: 20px;
     }
+    .card-title {
+        display: block;
+        text-align: center;
+    }
     @media screen and (max-width: 600px) {
         main.display {
             flex-direction: column;
